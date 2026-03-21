@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Dr. Kiran Prajapati </title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0f2744">
+<title>Dr. Kiran Prajapati | Optometrist & Eye Consultant – Navsari</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ── TOKENS ─────────────────────── */
+:root{
+  --white:#ffffff;
+  --off:#f7f5f0;
+  --light:#edeae3;
+  --ink:#1a1a1a;
+  --ink2:#3d3d3d;
+  --muted:#7a7a7a;
+  --border:#e0ddd6;
+  --gold:#b8934a;
+  --gold-l:#d4aa6a;
+  --teal:#1a7a8a;
+  --teal-l:#2a9aaa;
+  --navy:#0f2744;
+  --r:6px;
+  --shadow:0 2px 20px rgba(0,0,0,.07);
+  --shadow-md:0 8px 40px rgba(0,0,0,.1);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+  --nav-h:64px;
+}
+
+/* ── RESET ───────────────────────── */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;width:100%;object-fit:cover;}
+a{text-decoration:none;color:inherit;}
+input,select,textarea{font-size:16px!important;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* ── PRELOADER ───────────────────── */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--navy);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  transition:opacity .7s ease, visibility .7s;
+  padding:1.5rem;
+}
+#loader.out{opacity:0;visibility:hidden;}
+.ld-eye{position:relative;width:min(100px,26vw);height:auto;aspect-ratio:100/58;}
+.ld-eye svg{width:100%;height:100%;}
+.ld-lid-t{animation:lidTop 1.4s cubic-bezier(.4,0,.2,1) .4s both;transform-origin:50px 0;}
+.ld-lid-b{animation:lidBot 1.4s cubic-bezier(.4,0,.2,1) .4s both;transform-origin:50px 58px;}
+@keyframes lidTop{from{transform:scaleY(1);}to{transform:scaleY(0);}}
+@keyframes lidBot{from{transform:scaleY(1);}to{transform:scaleY(0);}}
+.ld-iris{animation:irisIn .5s cubic-bezier(.34,1.56,.64,1) 1.7s both;transform-origin:50px 29px;}
+@keyframes irisIn{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+.ld-pupil{animation:pupilBreath 2.4s ease-in-out 2.1s infinite;transform-origin:50px 29px;}
+@keyframes pupilBreath{0%,100%{transform:scale(1);}50%{transform:scale(.78);}}
+.ld-name{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,5vw,2.4rem);color:var(--white);letter-spacing:.5px;animation:fadeUp .8s ease 1.8s both;text-align:center;}
+.ld-title{font-family:'Inter',sans-serif;font-size:clamp(.6rem,.72rem,.9rem);letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.45);animation:fadeUp .8s ease 2.1s both;margin-top:.4rem;text-align:center;}
+.ld-bar-wrap{width:min(180px,60vw);animation:fadeUp .6s ease 2s both;}
+.ld-bar-track{height:1px;background:rgba(255,255,255,.12);}
+.ld-bar-fill{height:1px;background:var(--gold);width:0%;animation:barFill 2.8s cubic-bezier(.25,.46,.45,.94) .5s both;}
+@keyframes barFill{to{width:100%;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── NAV ─────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 4vw;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:box-shadow .3s;
+}
+nav.raised{box-shadow:var(--shadow);}
+.nav-logo{display:flex;align-items:center;gap:.75rem;min-width:0;}
+.nav-logo-mark{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo-mark svg{width:20px;height:13px;}
+.nav-logo-text{min-width:0;}
+.nav-logo-text h2{font-family:'Playfair Display',serif;font-size:clamp(.85rem,2.5vw,1.05rem);color:var(--ink);font-weight:600;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nav-logo-text p{font-size:.56rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:1px;white-space:nowrap;}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;}
+.nav-links a{padding:.5rem .85rem;font-size:.82rem;font-weight:500;color:var(--ink2);transition:color .25s;letter-spacing:-.1px;}
+.nav-links a:hover{color:var(--teal);}
+.nav-book{background:var(--navy);color:var(--white)!important;padding:.5rem 1.3rem!important;border-radius:50px;font-weight:600!important;font-size:.78rem!important;transition:background .25s,transform .2s!important;}
+.nav-book:hover{background:var(--teal)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;}
+.hamburger span{width:22px;height:1.5px;background:var(--ink);border-radius:1px;transition:all .3s;}
+
+/* ── HERO ─────────────────────────── */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding-top:var(--nav-h);
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 5vw 4rem 7vw;
+  background:var(--white);
+}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;font-weight:600;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--teal);}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,4rem);line-height:1.1;color:var(--ink);font-weight:700;margin-bottom:1.2rem;}
+.hero-h1 em{color:var(--teal);font-style:normal;}
+.hero-body{font-size:clamp(.88rem,1.5vw,1rem);color:var(--muted);line-height:1.85;max-width:440px;margin-bottom:2rem;font-weight:300;}
+.hero-cta-row{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-primary{background:var(--navy);color:var(--white);padding:.8rem 1.8rem;border-radius:50px;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:none;cursor:pointer;letter-spacing:.2px;white-space:nowrap;}
+.btn-primary:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,122,138,.3);}
+.btn-secondary{background:transparent;color:var(--ink);padding:.8rem 1.8rem;border-radius:50px;font-size:.85rem;font-weight:500;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:1.5px solid var(--border);cursor:pointer;white-space:nowrap;}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal);}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;}
+.hero-stat-n{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--ink);line-height:1;font-weight:700;}
+.hero-stat-n span{font-size:1.1rem;color:var(--gold);}
+.hero-stat-l{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:.3rem;}
+
+/* HERO RIGHT — KEY FIX */
+.hero-right{
+  position:relative;
+  overflow:hidden;
+  /* On desktop: fills the full grid cell height */
+}
+.hero-right img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  /* Show face/head at top on desktop */
+  object-position:center top;
+}
+.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,.15) 0%,transparent 30%);}
+.hero-card{position:absolute;bottom:2rem;left:1.5rem;background:var(--white);border-radius:var(--r);padding:.9rem 1.1rem;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.8rem;animation:float 4s ease-in-out infinite;max-width:220px;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.hero-card-icon{width:34px;height:34px;background:var(--navy);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:.85rem;flex-shrink:0;}
+.hero-card-txt h4{font-size:.75rem;font-weight:600;color:var(--ink);}
+.hero-card-txt p{font-size:.63rem;color:var(--muted);margin-top:.12rem;}
+.hero-badge{position:absolute;top:1.5rem;right:1.5rem;background:var(--navy);border-radius:50%;width:80px;height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white);box-shadow:var(--shadow-md);}
+.hero-badge .bn{font-family:'Playfair Display',serif;font-size:1.4rem;line-height:1;font-weight:700;color:var(--gold);}
+.hero-badge .bl{font-size:.48rem;letter-spacing:1px;text-transform:uppercase;opacity:.7;margin-top:.2rem;text-align:center;line-height:1.3;}
+
+/* ── SECTION BASE ─────────────────── */
+.section{padding:5rem 7vw;}
+.section-alt{background:var(--off);}
+.section-dark{background:var(--navy);color:var(--white);}
+.section-tag{font-size:.65rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:.8rem;display:block;}
+.section-h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.6rem);color:var(--ink);line-height:1.2;font-weight:700;}
+.section-h2.white{color:var(--white);}
+.section-body{font-size:.92rem;color:var(--muted);line-height:1.9;max-width:520px;margin-top:.8rem;font-weight:300;}
+.section-body.white{color:rgba(255,255,255,.6);}
+.divider{width:40px;height:2px;background:var(--gold);margin:1.2rem 0;}
+.section-header{text-align:center;margin-bottom:3.5rem;}
+.section-header .section-body{margin-left:auto;margin-right:auto;}
+
+/* ── TRUST BAR ───────────────────── */
+.trust-bar{background:var(--navy);padding:1rem 5vw;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.65);font-size:.76rem;letter-spacing:.2px;}
+.trust-item i{color:var(--gold);font-size:.82rem;}
+.trust-sep{width:1px;height:18px;background:rgba(255,255,255,.12);}
+
+/* ── ABOUT ───────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto;}
+.about-imgs{position:relative;}
+.about-img-main{height:500px;border-radius:12px;box-shadow:var(--shadow-lg);}
+.about-img-2{position:absolute;bottom:-2rem;right:-2rem;width:48%;height:190px;border-radius:10px;border:4px solid var(--white);box-shadow:var(--shadow-md);}
+.about-exp-badge{position:absolute;top:-1.5rem;left:-1.5rem;background:var(--gold);border-radius:10px;padding:1rem 1.2rem;text-align:center;box-shadow:var(--shadow-md);}
+.about-exp-badge .en{font-family:'Playfair Display',serif;font-size:2rem;color:var(--white);line-height:1;font-weight:700;}
+.about-exp-badge .el{font-size:.56rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.about-txt .section-h2{text-align:left;}
+.about-txt p{font-size:.88rem;color:var(--ink2);line-height:2;margin-bottom:.85rem;font-weight:300;}
+.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:1.4rem 0;}
+.af{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--ink2);}
+.af i{color:var(--teal);font-size:.75rem;flex-shrink:0;}
+.creds{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;}
+.cred{background:var(--off);border:1px solid var(--border);border-radius:50px;padding:.3rem .8rem;font-size:.68rem;color:var(--ink2);font-weight:500;}
+
+/* ── SERVICES ────────────────────── */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.6rem;
+  max-width:1200px;
+  margin:0 auto;
+}
+.svc{
+  position:relative;
+  height:240px;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  background:#000;
+}
+.svc img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+.svc::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(10,25,45,.75),rgba(10,25,45,.35),transparent);
+  z-index:1;
+}
+.svc-content{
+  position:absolute;
+  bottom:28px;
+  left:28px;
+  z-index:2;
+  color:white;
+}
+.svc-content h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.svc-btn{
+  font-size:.72rem;
+  letter-spacing:2px;
+  color:#d4aa6a;
+  font-weight:600;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.svc-btn::after{content:"→";transition:transform .3s;}
+.svc:hover img{transform:scale(1.1);}
+.svc:hover .svc-btn::after{transform:translateX(6px);}
+
+/* ── VISION THERAPY ─────────────── */
+.vt-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto;}
+.vt-images{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.vt-img-tall{grid-row:span 2;border-radius:10px;overflow:hidden;}
+.vt-img-tall img{height:100%;min-height:400px;}
+.vt-img-sq{border-radius:10px;overflow:hidden;}
+.vt-img-sq img{height:185px;}
+.vt-txt .section-h2{text-align:left;}
+.vt-txt blockquote{border-left:3px solid var(--gold);padding:.75rem 1rem;background:var(--off);border-radius:0 6px 6px 0;margin:1.1rem 0;font-style:italic;font-size:.86rem;color:var(--ink2);line-height:1.8;}
+.vt-pillars{display:flex;flex-direction:column;gap:.7rem;margin-top:1.3rem;}
+.vt-pill{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem .95rem;border-radius:8px;border:1px solid var(--border);background:var(--white);transition:border-color .25s;}
+.vt-pill:hover{border-color:var(--teal);}
+.vt-pill-ic{width:30px;height:30px;min-width:30px;background:var(--off);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.78rem;}
+.vt-pill h5{font-size:.8rem;font-weight:600;margin-bottom:.18rem;color:var(--ink);}
+.vt-pill p{font-size:.74rem;color:var(--muted);line-height:1.6;font-weight:300;}
+.vt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1200px;margin:0 auto;}
+.vtc{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:all .3s;}
+.vtc:hover{box-shadow:var(--shadow-md);border-color:transparent;}
+.vtc-ic{width:38px;height:38px;border-radius:8px;background:var(--off);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.88rem;margin-bottom:.9rem;}
+.vtc h4{font-size:.88rem;font-weight:600;margin-bottom:.45rem;color:var(--ink);}
+.vtc p{font-size:.78rem;color:var(--muted);line-height:1.75;font-weight:300;}
+
+/* VT Card Images */
+.vtc-img{width:100%;height:150px;border-radius:8px;overflow:hidden;margin-bottom:1rem;}
+.vtc-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
+.vtc:hover .vtc-img img{transform:scale(1.06);}
+
+/* ── IMAGE ROW ───────────────────── */
+.img-row{display:grid;gap:1rem;max-width:1200px;margin:0 auto;}
+.img-row-3{grid-template-columns:repeat(3,1fr);}
+.img-row-4{grid-template-columns:repeat(4,1fr);}
+.img-row-item{border-radius:10px;overflow:hidden;}
+.img-row-item img{height:200px;transition:transform .4s;}
+.img-row-item:hover img{transform:scale(1.04);}
+.img-row-item.tall img{height:300px;}
+
+/* ── QUIZ ────────────────────────── */
+.quiz-wrap{max-width:660px;margin:0 auto;}
+.quiz-box{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.2rem;box-shadow:var(--shadow);}
+.quiz-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.8rem;}
+.quiz-step-icon{width:44px;height:44px;background:var(--off);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;}
+.quiz-prog-wrap{flex:1;min-width:0;}
+.quiz-prog-label{font-size:.66rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
+.quiz-prog-track{height:3px;background:var(--light);border-radius:2px;overflow:hidden;}
+.quiz-prog-fill{height:100%;background:linear-gradient(to right,var(--navy),var(--teal));border-radius:2px;transition:width .4s ease;}
+.quiz-q{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.35rem);color:var(--ink);line-height:1.4;margin-bottom:1.4rem;}
+.quiz-opts{display:flex;flex-direction:column;gap:.55rem;}
+.quiz-opt{background:var(--off);border:1.5px solid transparent;border-radius:8px;padding:.8rem 1rem;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:.75rem;font-size:.84rem;color:var(--ink2);font-weight:400;-webkit-tap-highlight-color:transparent;min-height:48px;}
+.quiz-opt:hover{border-color:var(--teal);background:rgba(26,122,138,.04);}
+.quiz-opt.sel{border-color:var(--teal);background:rgba(26,122,138,.06);color:var(--teal);}
+.quiz-opt i{color:var(--teal);width:16px;text-align:center;flex-shrink:0;}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem;gap:.8rem;}
+.quiz-result{text-align:center;padding:.5rem 0;}
+.qr-icon{font-size:2.8rem;margin-bottom:.7rem;display:block;}
+.qr-badge{display:inline-block;padding:.3rem .85rem;border-radius:50px;font-size:.66rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:.8rem;}
+.qr-badge.high{background:rgba(220,70,70,.08);color:#c04040;border:1px solid rgba(220,70,70,.2);}
+.qr-badge.med{background:rgba(184,147,74,.1);color:var(--gold);border:1px solid rgba(184,147,74,.25);}
+.qr-badge.low{background:rgba(26,122,138,.08);color:var(--teal);border:1px solid rgba(26,122,138,.2);}
+.qr-title{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.5rem);color:var(--ink);margin-bottom:.55rem;}
+.qr-desc{font-size:.84rem;color:var(--muted);line-height:1.85;max-width:460px;margin:0 auto 1.1rem;font-weight:300;}
+.qr-rec{background:var(--off);border-radius:8px;padding:1rem;margin-bottom:1.3rem;border:1px solid var(--border);}
+.qr-rec h4{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:.35rem;}
+.qr-rec p{font-size:.8rem;color:var(--ink2);line-height:1.75;}
+
+/* ── SOCIAL WORK ─────────────────── */
+.social-intro{background:var(--teal);color:var(--white);border-radius:12px;padding:2.2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 2.5rem;}
+.social-intro h3{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.6rem);font-weight:700;}
+.social-intro p{font-size:.86rem;color:rgba(255,255,255,.75);line-height:1.8;max-width:460px;margin-top:.4rem;font-weight:300;}
+.social-nums{display:flex;gap:2rem;flex-shrink:0;}
+.sn-item{text-align:center;}
+.sn-item .num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--white);line-height:1;display:block;}
+.sn-item .lbl{font-size:.6rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;margin-top:.2rem;display:block;}
+.social-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1200px;margin:0 auto;}
+.sc{border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);transition:all .3s;}
+.sc:hover{box-shadow:var(--shadow-md);}
+.sc img{height:190px;transition:transform .4s;}
+.sc:hover img{transform:scale(1.04);}
+.sc-body{padding:1.2rem;}
+.sc-body i{color:var(--teal);font-size:.95rem;margin-bottom:.55rem;display:block;}
+.sc-body h3{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.35rem;}
+.sc-body p{font-size:.76rem;color:var(--muted);line-height:1.65;font-weight:300;}
+
+/* ── TESTIMONIALS ─────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:1200px;margin:0 auto;}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.6rem;transition:all .3s;}
+.tc:hover{box-shadow:var(--shadow-md);border-color:transparent;}
+.tc.feature{grid-column:span 2;background:var(--navy);border-color:transparent;}
+.tc.feature .tc-txt{color:rgba(255,255,255,.7);}
+.tc.feature .tc-name{color:var(--white);}
+.tc.feature .tc-role{color:rgba(255,255,255,.45);}
+.tc.feature .stars{color:var(--gold);}
+.stars{color:var(--gold);font-size:.8rem;margin-bottom:.85rem;letter-spacing:1px;}
+.tc-txt{font-size:.84rem;color:var(--ink2);line-height:1.9;margin-bottom:1.2rem;font-style:italic;font-weight:300;}
+.tc-author{display:flex;align-items:center;gap:.7rem;}
+.tc-av{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border);}
+.tc-av img{height:38px;}
+.tc-name{font-size:.82rem;font-weight:600;color:var(--ink);}
+.tc-role{font-size:.68rem;color:var(--muted);margin-top:.08rem;}
+
+/* ── APPOINTMENT ─────────────────── */
+.appt-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;max-width:1200px;margin:0 auto;align-items:start;}
+.appt-left .section-h2{text-align:left;}
+.appt-left p{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.4rem;font-weight:300;}
+.appt-img{border-radius:10px;overflow:hidden;margin-bottom:1.6rem;}
+.appt-img img{height:260px;}
+.perks{display:flex;flex-direction:column;gap:.85rem;}
+.perk{display:flex;align-items:flex-start;gap:.75rem;}
+.perk-ic{width:32px;height:32px;min-width:32px;background:var(--off);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.8rem;}
+.perk-tx h4{font-size:.82rem;font-weight:600;color:var(--ink);}
+.perk-tx p{font-size:.74rem;color:var(--muted);margin-top:.12rem;line-height:1.55;font-weight:300;}
+.form-box{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:2rem;}
+.form-box h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:.3rem;}
+.form-box .form-sub{font-size:.74rem;color:var(--muted);margin-bottom:1.4rem;}
+.fg{margin-bottom:.9rem;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+.fg label{display:block;font-size:.66rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2);margin-bottom:.38rem;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:.68rem .85rem;color:var(--ink);font-family:'Inter',sans-serif;font-size:16px!important;transition:border-color .2s;outline:none;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);}
+.fg textarea{resize:vertical;min-height:75px;}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:.88rem;border-radius:8px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s;margin-top:.35rem;display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;}
+.form-submit:hover{background:var(--teal);}
+.form-success{text-align:center;padding:2rem;display:none;}
+.form-success i{font-size:2.4rem;color:var(--teal);display:block;margin-bottom:.75rem;}
+.form-success h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:.45rem;}
+.form-success p{font-size:.82rem;color:var(--muted);margin-bottom:1.1rem;}
+
+/* ── LOCATION ────────────────────── */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;max-width:1200px;margin:0 auto;align-items:start;}
+.loc-left .section-h2{text-align:left;}
+.contact-list{display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.5rem;}
+.ci{display:flex;align-items:flex-start;gap:.85rem;}
+.ci-ic{width:36px;height:36px;min-width:36px;background:var(--off);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--teal);}
+.ci-tx h4{font-size:.8rem;font-weight:600;color:var(--ink);}
+.ci-tx p{font-size:.74rem;color:var(--muted);margin-top:.08rem;line-height:1.55;}
+.hours-table{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1rem;}
+.hr{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid var(--border);font-size:.78rem;gap:.5rem;}
+.hr:last-child{border-bottom:none;}
+.hr .day{color:var(--muted);font-weight:300;flex-shrink:0;}
+.hr .time{color:var(--ink);font-weight:600;text-align:right;}
+.map-box{background:var(--off);border:1px solid var(--border);border-radius:12px;height:360px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.map-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;}
+.map-box-content{position:relative;z-index:1;text-align:center;padding:1.8rem;}
+.map-box-content i{font-size:2.2rem;color:var(--teal);display:block;margin-bottom:.9rem;}
+.map-box-content p{font-size:.84rem;color:var(--ink2);margin-bottom:1.4rem;line-height:1.7;}
+.map-box-content a{background:var(--navy);color:var(--white);padding:.62rem 1.5rem;border-radius:50px;font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem;transition:background .25s;}
+.map-box-content a:hover{background:var(--teal);}
+
+/* ── FOOTER ──────────────────────── */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:3.5rem 7vw 2rem;}
+.footer-wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;}
+.fb-brand h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--white);margin-bottom:.7rem;}
+.fb-brand p{font-size:.76rem;line-height:1.9;margin-bottom:1.1rem;font-weight:300;}
+.fsocials{display:flex;gap:.55rem;}
+.fsocials a{width:32px;height:32px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;color:rgba(255,255,255,.5);transition:all .25s;}
+.fsocials a:hover{background:var(--gold);color:var(--navy);border-color:transparent;}
+.fc h4{font-size:.6rem;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.35);margin-bottom:.9rem;font-weight:600;}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:.5rem;}
+.fc ul li a{font-size:.76rem;color:rgba(255,255,255,.45);transition:color .25s;font-weight:300;}
+.fc ul li a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;padding-top:1.3rem;text-align:center;font-size:.68rem;color:rgba(255,255,255,.2);max-width:1200px;margin-left:auto;margin-right:auto;}
+
+/* ── FLOAT BUTTONS ───────────────── */
+.float-btns{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:flex;flex-direction:column;gap:.55rem;}
+.fb-btn{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.05rem;cursor:pointer;transition:all .25s;border:none;text-decoration:none;box-shadow:var(--shadow-md);}
+.fb-btn.wa{background:#25D366;color:var(--white);}
+.fb-btn.ph{background:var(--navy);color:var(--white);}
+.fb-btn.up{background:var(--white);color:var(--ink);border:1px solid var(--border);opacity:0;pointer-events:none;}
+.fb-btn.up.show{opacity:1;pointer-events:all;}
+.fb-btn:hover{transform:translateY(-3px);}
+
+/* ── MOBILE MENU ─────────────────── */
+.mobile-nav{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:99;background:var(--white);border-top:1px solid var(--border);display:flex;flex-direction:column;padding:1.5rem 1.2rem;gap:0;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.mobile-nav.open{opacity:1;pointer-events:all;}
+.mobile-nav a{padding:.95rem 0;font-size:1.05rem;color:var(--ink);border-bottom:1px solid var(--border);font-weight:400;font-family:'Playfair Display',serif;display:flex;align-items:center;gap:.6rem;}
+.mobile-nav a:hover{color:var(--teal);}
+.mobile-nav .btn-primary{margin-top:1.2rem;justify-content:center;border-radius:8px;font-size:.9rem!important;}
+
+/* ── REVEAL ──────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.rv-l{opacity:0;transform:translateX(-24px);transition:opacity .65s ease,transform .65s ease;}
+.rv-r{opacity:0;transform:translateX(24px);transition:opacity .65s ease,transform .65s ease;}
+.rv.in,.rv-l.in,.rv-r.in{opacity:1;transform:none;}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+═══════════════════════════════════ */
+@media(max-width:1024px){
+  /* Hero: stack vertically on tablet */
+  #hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .hero-left{
+    padding:3.5rem 5vw 3rem;
+    order:1;
+  }
+  .hero-right{
+    order:2;
+    /* Let the image dictate height naturally on tablet */
+    height:auto;
+    max-height:520px;
+    min-height:380px;
+  }
+  .hero-right img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 10%;
+    display:block;
+  }
+  .hero-card{bottom:1.5rem;left:1.2rem;max-width:200px;padding:.75rem 1rem;}
+  .hero-badge{top:1.2rem;right:1.2rem;width:72px;height:72px;}
+
+  .about-grid,.vt-layout,.appt-grid,.loc-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .about-imgs{margin-bottom:3rem;}
+  .about-img-main{height:420px;}
+
+  .footer-wrap{grid-template-columns:1fr 1fr;gap:2rem;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .tc.feature{grid-column:span 2;}
+  .vt-cards,.services-grid{grid-template-columns:1fr 1fr;}
+  .social-cards{grid-template-columns:1fr 1fr;}
+  .fr{grid-template-columns:1fr 1fr;}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+═══════════════════════════════════ */
+@media(max-width:768px){
+  :root{--nav-h:60px;}
+  .section{padding:3.5rem 1.2rem;}
+
+  /* NAV */
+  nav{padding:0 1rem;}
+  .nav-links,.nav-book-desktop{display:none;}
+  .hamburger{display:flex;}
+  .nav-logo-text p{display:none;}
+
+  /* ── HERO MOBILE FIX ──
+     Show image FIRST (top), text BELOW.
+     Image uses aspect-ratio so the full portrait is visible — no cropping.
+  */
+  #hero{
+    display:flex;
+    flex-direction:column;
+    min-height:auto;
+    padding-top:var(--nav-h);
+  }
+  .hero-right{
+    order:1;
+    width:100%;
+    /* Use aspect ratio to show full image without cropping */
+    height:auto;
+    aspect-ratio:3/4;
+    max-height:75vw;
+    min-height:260px;
+    flex-shrink:0;
+  }
+  .hero-right img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    /* Show face/head — top-center positioning */
+    object-position:center 5%;
+    display:block;
+  }
+  .hero-left{
+    order:2;
+    padding:2.5rem 1.2rem 2.5rem;
+    background:var(--white);
+  }
+  .hero-h1{font-size:clamp(1.9rem,7vw,2.5rem);}
+  .hero-body{font-size:.88rem;margin-bottom:1.6rem;}
+  .hero-cta-row{gap:.6rem;}
+  .btn-primary,.btn-secondary{padding:.75rem 1.4rem;font-size:.82rem;}
+  .hero-stats{gap:1.5rem;}
+  .hero-stat-n{font-size:1.7rem;}
+  .hero-card{
+    bottom:1rem;left:.9rem;
+    max-width:180px;
+    padding:.65rem .85rem;
+    gap:.6rem;
+  }
+  .hero-card-icon{width:28px;height:28px;border-radius:6px;font-size:.75rem;}
+  .hero-card-txt h4{font-size:.68rem;}
+  .hero-card-txt p{font-size:.58rem;}
+  .hero-badge{
+    top:1rem;right:.9rem;
+    width:56px;height:56px;
+  }
+  .hero-badge .bn{font-size:1.1rem;}
+  .hero-badge .bl{font-size:.4rem;}
+
+  /* TRUST BAR */
+  .trust-bar{gap:1rem;padding:.85rem 1.2rem;justify-content:flex-start;}
+  .trust-sep{display:none;}
+  .trust-item{font-size:.72rem;}
+
+  /* ABOUT */
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-imgs{margin-bottom:1rem;}
+  .about-img-main{height:280px;}
+  .about-img-2{display:none;}
+  .about-exp-badge{top:auto;bottom:-1rem;left:1rem;padding:.7rem .9rem;}
+  .about-exp-badge .en{font-size:1.5rem;}
+  .about-feats{grid-template-columns:1fr;}
+  .af{font-size:.8rem;}
+
+  /* SERVICES */
+  .services-grid{grid-template-columns:1fr;gap:0;}
+  .svc{padding:1.4rem;}
+
+  /* VT */
+  .vt-layout{grid-template-columns:1fr;gap:2rem;}
+  .vt-images{grid-template-columns:1fr 1fr;}
+  .vt-img-tall{grid-row:auto;}
+  .vt-img-tall img{min-height:auto;height:180px;}
+  .vt-img-sq img{height:130px;}
+  .vt-txt blockquote{font-size:.82rem;}
+  .vt-cards{grid-template-columns:1fr;}
+  .vtc{padding:1.3rem;}
+
+  /* IMAGE ROWS */
+  .img-row-4{grid-template-columns:1fr 1fr;}
+  .img-row-3{grid-template-columns:1fr;}
+  .img-row-item img{height:170px;}
+  .img-row-item.tall img{height:220px;}
+
+  /* QUIZ */
+  .quiz-box{padding:1.4rem;}
+  .quiz-q{font-size:1.05rem;}
+  .quiz-opt{padding:.75rem .9rem;font-size:.82rem;}
+  .quiz-nav{flex-wrap:wrap;gap:.6rem;}
+  .quiz-nav .btn-primary,.quiz-nav .btn-secondary{font-size:.78rem!important;padding:.65rem 1.2rem!important;}
+
+  /* SOCIAL */
+  .social-intro{flex-direction:column;gap:1.5rem;padding:1.5rem;}
+  .social-intro h3{font-size:1.25rem;}
+  .social-nums{gap:1.2rem;width:100%;justify-content:space-around;}
+  .social-cards{grid-template-columns:1fr;}
+
+  /* TESTIMONIALS */
+  .testi-grid{grid-template-columns:1fr;}
+  .tc.feature{grid-column:span 1;}
+  .tc{padding:1.3rem;}
+
+  /* APPOINTMENT */
+  .appt-grid{grid-template-columns:1fr;gap:2rem;}
+  .appt-img img{height:200px;}
+  .form-box{padding:1.4rem;}
+  .fr{grid-template-columns:1fr;}
+  .form-box h3{font-size:1.1rem;}
+
+  /* LOCATION */
+  .loc-grid{grid-template-columns:1fr;gap:2rem;}
+  .map-box{height:300px;}
+  .hr{flex-direction:column;align-items:flex-start;gap:.15rem;padding:.55rem 0;}
+  .hr .time{font-size:.76rem;}
+
+  /* FOOTER */
+  .footer-wrap{grid-template-columns:1fr;gap:2rem;}
+  footer{padding:2.5rem 1.2rem 1.5rem;}
+  .footer-bottom{margin-top:1.5rem;padding-top:1rem;font-size:.64rem;}
+
+  /* FLOAT BUTTONS */
+  .float-btns{bottom:1.2rem;right:1rem;}
+  .fb-btn{width:46px;height:46px;font-size:1rem;}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤420px)
+═══════════════════════════════════ */
+@media(max-width:420px){
+  .hero-right{
+    aspect-ratio:4/5;
+    max-height:90vw;
+  }
+  .hero-right img{
+    object-position:center 8%;
+  }
+  .hero-left{padding:2rem 1rem 2rem;}
+  .hero-h1{font-size:1.75rem;}
+  .hero-cta-row{flex-direction:column;}
+  .hero-cta-row .btn-primary,.hero-cta-row .btn-secondary{width:100%;justify-content:center;}
+  .section{padding:3rem 1rem;}
+  .about-img-main{height:240px;}
+  .vt-images{grid-template-columns:1fr;}
+  .vt-img-sq img{height:160px;}
+  .img-row-4{grid-template-columns:1fr 1fr;}
+  .img-row-3{grid-template-columns:1fr;}
+  .quiz-box{padding:1.1rem;}
+  .quiz-head{gap:.6rem;}
+  .quiz-step-icon{width:38px;height:38px;font-size:1rem;}
+  .section-header{margin-bottom:2.5rem;}
+  .testi-grid{grid-template-columns:1fr;}
+  .social-nums .sn-item .num{font-size:1.6rem;}
+  .map-box{height:260px;}
+  .form-box{padding:1.1rem;}
+}
+
+/* ═══════════════════════════════════
+   TOUCH & ACCESSIBILITY
+═══════════════════════════════════ */
+@media(hover:none){
+  .svc:hover,.vtc:hover,.sc:hover,.tc:hover,.vt-pill:hover{
+    background:initial;box-shadow:none;border-color:var(--border);
+  }
+  .svc:hover .svc-ic{background:var(--off);color:var(--teal);border-color:var(--border);}
+  .btn-primary:hover,.btn-secondary:hover{transform:none;box-shadow:none;}
+}
+
+@media(max-width:768px){
+  .quiz-opt:active{border-color:var(--teal);background:rgba(26,122,138,.08);}
+  .btn-primary:active{transform:scale(.97);background:var(--teal);}
+  .btn-secondary:active{border-color:var(--teal);color:var(--teal);}
+  .fb-btn:active{transform:scale(.93);}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="loader">
+  <div class="ld-eye">
+    <svg viewBox="0 0 100 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lgGold" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#b8934a"/>
+          <stop offset="100%" stop-color="#d4aa6a"/>
+        </linearGradient>
+        <radialGradient id="lgIris" cx="43%" cy="38%">
+          <stop offset="0%" stop-color="#1a8fa0"/>
+          <stop offset="60%" stop-color="#0a5a6e"/>
+          <stop offset="100%" stop-color="#041828"/>
+        </radialGradient>
+        <radialGradient id="lgPupilG" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="rgba(26,122,138,.2)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="50" cy="29" rx="48" ry="26" fill="#0a1e35"/>
+      <path d="M2 29 Q50 3 98 29" stroke="url(#lgGold)" stroke-width="1" fill="none" opacity=".7"/>
+      <path d="M2 29 Q50 55 98 29" stroke="url(#lgGold)" stroke-width="1" fill="none" opacity=".7"/>
+      <g class="ld-iris">
+        <circle cx="50" cy="29" r="19" fill="url(#lgIris)"/>
+        <circle cx="50" cy="29" r="19" stroke="rgba(184,147,74,.4)" stroke-width=".8" fill="none"/>
+        <circle cx="50" cy="29" r="14" stroke="rgba(26,122,138,.25)" stroke-width=".5" fill="none" stroke-dasharray="3 3"/>
+        <g class="ld-pupil">
+          <circle cx="50" cy="29" r="9" fill="#020c18"/>
+          <circle cx="50" cy="29" r="9" fill="url(#lgPupilG)"/>
+        </g>
+        <ellipse cx="42" cy="22" rx="5" ry="3.5" fill="white" opacity=".2" transform="rotate(-20 42 22)"/>
+      </g>
+      <g class="ld-lid-t">
+        <path d="M2 29 Q50 3 98 29 L98 0 L2 0 Z" fill="#0f2744"/>
+        <circle cx="20" cy="22" r="1.5" fill="rgba(184,147,74,.5)"/>
+        <circle cx="35" cy="14" r="1.5" fill="rgba(184,147,74,.6)"/>
+        <circle cx="50" cy="11" r="2" fill="rgba(184,147,74,.8)"/>
+        <circle cx="65" cy="14" r="1.5" fill="rgba(184,147,74,.6)"/>
+        <circle cx="80" cy="22" r="1.5" fill="rgba(184,147,74,.5)"/>
+      </g>
+      <g class="ld-lid-b">
+        <path d="M2 29 Q50 55 98 29 L98 58 L2 58 Z" fill="#0f2744"/>
+      </g>
+    </svg>
+  </div>
+  <div>
+    <div class="ld-name">Dr. Kiran Prajapati</div>
+    <div class="ld-title">Optometrist · Eye Consultant · Navsari</div>
+  </div>
+  <div class="ld-bar-wrap">
+    <div class="ld-bar-track"><div class="ld-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 22 14" fill="none">
+        <path d="M1 7 Q11 1 21 7 Q11 13 1 7Z" stroke="#b8934a" stroke-width="1.2" fill="none"/>
+        <circle cx="11" cy="7" r="3.5" fill="none" stroke="white" stroke-width="1"/>
+        <circle cx="11" cy="7" r="1.5" fill="#b8934a"/>
+        <ellipse cx="8.5" cy="5.5" rx="1.5" ry="1" fill="white" opacity=".35" transform="rotate(-20 8.5 5.5)"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <h2>Dr. Kiran Prajapati</h2>
+      <p>Optometrist · Eye Consultant · Navsari</p>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#vision-therapy">Vision Therapy</a></li>
+    <li><a href="#quiz">Eye Check</a></li>
+    <li><a href="#social">Social Work</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#appointment" class="nav-book">Book Appointment</a></li>
+  </ul>
+  <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" role="navigation">
+  <a href="#about" onclick="toggleMenu()"><i class="fas fa-user-md" style="color:var(--teal);width:20px;"></i>About</a>
+  <a href="#services" onclick="toggleMenu()"><i class="fas fa-eye" style="color:var(--teal);width:20px;"></i>Services</a>
+  <a href="#vision-therapy" onclick="toggleMenu()"><i class="fas fa-brain" style="color:var(--teal);width:20px;"></i>Vision Therapy</a>
+  <a href="#quiz" onclick="toggleMenu()"><i class="fas fa-clipboard-check" style="color:var(--teal);width:20px;"></i>Eye Check</a>
+  <a href="#social" onclick="toggleMenu()"><i class="fas fa-heart" style="color:var(--teal);width:20px;"></i>Social Work</a>
+  <a href="#testimonials" onclick="toggleMenu()"><i class="fas fa-star" style="color:var(--teal);width:20px;"></i>Reviews</a>
+  <a href="#appointment" class="btn-primary" onclick="toggleMenu()"><i class="fas fa-calendar-plus"></i>Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Navsari's Trusted Eye Care Specialist</div>
+    <h1 class="hero-h1">Exceptional Vision Care<br>for <em>Every Patient</em></h1>
+    <p class="hero-body">Over 8 years of dedicated optometric practice in Navsari — offering comprehensive eye exams, advanced vision therapy, and compassionate care for children and adults alike.</p>
+    <div class="hero-cta-row">
+      <a href="#appointment" class="btn-primary"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+      <a href="#quiz" class="btn-secondary"><i class="fas fa-eye"></i> Eye Assessment</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n"><span id="s1">0</span><span>+</span></div>
+        <div class="hero-stat-l">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n"><span id="s2">0</span><span>+</span></div>
+        <div class="hero-stat-l">Patients Treated</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n"><span id="s3">0</span><span>+</span></div>
+        <div class="hero-stat-l">Children Helped</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://i.ibb.co/bYjFMj3/6e9573f32fd9.jpg" alt="Dr. Kiran Prajapati" loading="eager">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-card">
+      <div class="hero-card-icon"><i class="fas fa-award"></i></div>
+      <div class="hero-card-txt">
+        <h4>Certified Optometrist</h4>
+        <p>B.Optom · M.Optom · 8+ Years</p>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="bn">8</div>
+      <div class="bl">Years<br>Expert</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><i class="fas fa-check-circle"></i> Comprehensive Eye Exams</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><i class="fas fa-brain"></i> Vision Therapy Specialist</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><i class="fas fa-child"></i> Paediatric Eye Care</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><i class="fas fa-glasses"></i> Premium Eyewear</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><i class="fas fa-heart"></i> Free Community Eye Camps</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Navsari, Gujarat</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="about-grid">
+    <div class="about-imgs rv-l">
+      <img class="about-img-main" src="https://i.ibb.co/kVTd1xTp/64a13b7db3ad.jpg" alt="Dr. Kiran Prajapati at clinic" loading="lazy">
+      <img class="about-img-2" src="https://i.ibb.co/35c4m87W/b9d7187db0c4.jpg" alt="Eye examination" loading="lazy">
+      <div class="about-exp-badge">
+        <div class="en">8</div>
+        <div class="el">Years of<br>Excellence</div>
+      </div>
+    </div>
+    <div class="about-txt rv-r">
+      <span class="section-tag">About Dr. Prajapati</span>
+      <h2 class="section-h2">Dedicated to Protecting Your Most Precious Sense</h2>
+      <div class="divider"></div>
+      <p><strong>Dr. Kiran B. Prajapati, M.Optom</strong><br>Specialist Optometrist | Pediatric Vision Expert | Healthcare Entrepreneur</p>
+      <p>He is an evidence-based Optometrist specializing in pediatric vision and accessible healthcare. Holding an M.Optom from Shree K. P. Sanghvi Eye Institute and a B.Optom from Rotary Eye Institute, he combines clinical excellence with a mission to serve all segments of society.</p>
+      <p><strong>Clinical Experience &amp; Expertise</strong><br>Following roles at Netra Jyot Eye Hospital and Dr. Devang Naik Hospital, he founded Div's Eye Care in 2021 to provide high-quality, affordable service. He also serves as a Consultant Optometrist at Kids Care Hospital, Navsari.</p>
+      <p><strong>Comprehensive Diagnostics:</strong> Vision testing, ocular disease management, contact lens fitting, Orthoptics, Low Vision rehabilitation, and Ocular Prosthetics.</p>
+      <p><strong>Pediatric Focus:</strong> Specializes in visual development and behavioral optometry. He actively counsels parents on digital screen management, study ergonomics, and preventive visual hygiene.</p>
+      <p><strong>Community Impact</strong><br>Serving as a Trustee of the Ma Manav Seva Charitable Trust, he has organized over 200 eye check-up camps, providing free screenings, subsidized spectacles, and surgical assistance.</p>
+      <p><strong>"My mission is to deliver evidence-based eye care while advocating for the vital role of regular eye examinations in maintaining lifelong visual health." — Dr. K.P.</strong></p>
+      <div class="about-feats">
+        <div class="af"><i class="fas fa-check"></i> Vision Therapist</div>
+        <div class="af"><i class="fas fa-check"></i> Paediatric Eye Specialist</div>
+        <div class="af"><i class="fas fa-check"></i> Advanced Diagnostics</div>
+        <div class="af"><i class="fas fa-check"></i> Contact Lens Expert</div>
+        <div class="af"><i class="fas fa-check"></i> Ocular Disease Management</div>
+        <div class="af"><i class="fas fa-check"></i> Community Health Champion</div>
+      </div>
+      <div class="creds">
+        <span class="cred">B.Optom</span>
+        <span class="cred">M.Optom</span>
+        <span class="cred">8+ Years</span>
+        <span class="cred">Navsari, Gujarat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section section-alt">
+<div class="section-header rv">
+<span class="section-tag">What We Offer</span>
+<h2 class="section-h2">Complete Eye Care Services</h2>
+<div class="divider" style="margin:.9rem auto;"></div>
+<p class="section-body">From routine exams to specialised vision therapy — every service tailored to your unique needs.</p>
+</div>
+<div class="services-grid">
+<div class="svc rv">
+<img src="https://i.ibb.co/mrsj7gtz/8496de7a4a99.jpg">
+<div class="svc-content"><h3>Comprehensive Eye Exams</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/KpvNyKRg/d2ce83b75c6f.jpg">
+<div class="svc-content"><h3>Contact Lens Consultation</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/zHC1HYqW/06ae41f7dd7c.jpg">
+<div class="svc-content"><h3>LASIK & Refraction</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/BKc47kTm/04621f2fbed1.jpg">
+<div class="svc-content"><h3>Paediatric Eye Care</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/gZMD6jD0/73ef81755c41.jpg">
+<div class="svc-content"><h3>Ocular Disease Management</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/BS6d2gG/517a28a0593c.jpg">
+<div class="svc-content"><h3>Digital Eye Strain</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/yncYWfTs/7bfc4e9619a4.jpg">
+<div class="svc-content"><h3>Vision Therapy</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/84jjQdsh/d4da5487fb5b.jpg">
+<div class="svc-content"><h3>Sports Vision Training</h3><span class="svc-btn"></span></div>
+</div>
+<div class="svc rv">
+<img src="https://i.ibb.co/fG27pwmw/d03d13ec99b2.jpg">
+<div class="svc-content"><h3>Emergency Eye Care</h3><span class="svc-btn"></span></div>
+</div>
+</div>
+</section>
+
+<!-- IMAGE ROW 1 -->
+<div class="section" style="padding-top:0;">
+  <div class="img-row img-row-4 rv">
+    <div class="img-row-item"><img src="https://i.ibb.co/wNgMqLtw/52b82eebb3d4.jpg alt="Fundus Camera" loading="lazy"></div>
+    <div class="img-row-item"><img src="https://i.ibb.co/d427bgr1/f88098fe388a.jpg" alt="Eyewear" loading="lazy"></div>
+    <div class="img-row-item"><img src="https://i.ibb.co/yc6t1MmC/e90af8cf7d6f.jpg" alt="Children Eye Care" loading="lazy"></div>
+    <div class="img-row-item"><img src="https://i.ibb.co/Dff9rYGC/724da7f489e7.jpg" alt="Equipment" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- VISION THERAPY -->
+<section id="vision-therapy" class="section section-alt">
+  <div class="vt-layout">
+    <div class="vt-images rv-l">
+      <div class="vt-img-tall"><img src="https://i.ibb.co/nsDfRSz6/9ed305a536d1.jpg" alt="Vision Therapy" loading="lazy"></div>
+      <div class="vt-img-sq"><img src="https://i.ibb.co/bRBmj4K5/1a0587a2f615.jpg" alt="Child reading" loading="lazy"></div>
+      <div class="vt-img-sq"><img src="https://i.ibb.co/xtC1R7jc/80acff2aab78.jpg" alt="Adult eye exam" loading="lazy"></div>
+    </div>
+    <div class="vt-txt rv-r">
+      <span class="section-tag">Dr. Prajapati's Specialisation</span>
+      <h2 class="section-h2">What is Vision Therapy?</h2>
+      <div class="divider"></div>
+      <p class="section-body" style="margin-left:0;max-width:none;font-size:.88rem;color:var(--ink2);">Vision Therapy is a clinically supervised, evidence-based programme that retrains the brain-eye connection. Unlike glasses, which compensate for visual errors, Vision Therapy addresses the underlying cause — building lasting improvements in eye teaming, tracking, focus, and visual processing.</p>
+      <blockquote>"Vision is not just about seeing 20/20. It's about how the brain processes what the eyes see — and that's what Vision Therapy changes." — Dr. Kiran Prajapati</blockquote>
+      <div class="vt-pillars">
+        <div class="vt-pill rv"><div class="vt-pill-ic"><i class="fas fa-child"></i></div><div><h5>For Children</h5><p>Amblyopia, strabismus, convergence insufficiency, and reading difficulties. Early intervention yields the best outcomes.</p></div></div>
+        <div class="vt-pill rv"><div class="vt-pill-ic"><i class="fas fa-user"></i></div><div><h5>For Adults</h5><p>Post-concussion visual syndrome, digital eye strain, sports vision, and binocular vision dysfunction.</p></div></div>
+        <div class="vt-pill rv"><div class="vt-pill-ic"><i class="fas fa-chart-line"></i></div><div><h5>Proven Results</h5><p>CITT research confirms 73–88% success rate for Convergence Insufficiency — superior to glasses alone.</p></div></div>
+      </div>
+      <div style="margin-top:1.4rem;">
+        <a href="#appointment" class="btn-primary"><i class="fas fa-calendar-plus"></i> Book VT Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VT CONDITIONS -->
+<section class="section">
+<div class="section-header rv">
+<span class="section-tag">Conditions We Treat</span>
+<h2 class="section-h2">Vision Therapy for Children &amp; Adults</h2>
+<div class="divider" style="margin:.9rem auto;"></div>
+</div>
+<div class="vt-cards">
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/YTyX6Nd0/0f557367a268.jpg" alt="Amblyopia treatment"></div>
+<div class="vtc-ic"><i class="fas fa-search-plus"></i></div>
+<h4>Amblyopia (Lazy Eye)</h4>
+</div>
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/Mychp8M0/214856c2b835.jpg" alt="Convergence Insufficiency"></div>
+<div class="vtc-ic"><i class="fas fa-arrows-alt-h"></i></div>
+<h4>Convergence Insufficiency</h4>
+</div>
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/n86tVBjg/846ce6d79064.jpg" alt="Strabismus"></div>
+<div class="vtc-ic"><i class="fas fa-eye-slash"></i></div>
+<h4>Strabismus (Squint)</h4>
+</div>
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/w5kYzkS/b23e5c822438.jpg" alt="Reading difficulties"></div>
+<div class="vtc-ic"><i class="fas fa-book-reader"></i></div>
+<h4>Reading & Learning Difficulties</h4>
+</div>
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/TqtknmFc/d928d4a8522b.jpg" alt="Post concussion vision"></div>
+<div class="vtc-ic"><i class="fas fa-car-crash"></i></div>
+<h4>Post-Concussion Vision Syndrome</h4>
+</div>
+<div class="vtc rv">
+<div class="vtc-img"><img src="https://i.ibb.co/HLvG3k8J/8c2ff4c94e40.jpg" alt="Sports vision"></div>
+<div class="vtc-ic"><i class="fas fa-dumbbell"></i></div>
+<h4>Sports Vision Enhancement</h4>
+</div>
+</div>
+</section>
+
+<!-- IMAGE ROW 2 -->
+<div class="section section-alt" style="padding-top:0;padding-bottom:2.5rem;">
+  <div class="img-row img-row-3 rv">
+    <div class="img-row-item tall"><img src="https://i.ibb.co/TB9x91jj/1b06bb057946.jpg" alt="Eye Camp" loading="lazy"></div>
+    <div class="img-row-item tall"><img src="https://i.ibb.co/jvzDLDrj/a87e0e8ce93d.jpg" alt="Clinic" loading="lazy"></div>
+    <div class="img-row-item tall"><img src="https://i.ibb.co/3YBhQ5Hv/37201c1f23b7.jpg" alt="Equipment" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<section id="quiz" class="section section-alt">
+  <div class="section-header rv">
+    <span class="section-tag">Free Assessment</span>
+    <h2 class="section-h2">Check Your Eye Health in 60 Seconds</h2>
+    <div class="divider" style="margin:.9rem auto;"></div>
+    <p class="section-body">Answer 8 quick questions to receive a personalised recommendation from Dr. Prajapati's clinic — at no cost.</p>
+  </div>
+  <div class="quiz-wrap rv">
+    <div class="quiz-box" id="quizBox"></div>
+  </div>
+</section>
+
+<!-- SOCIAL WORK -->
+<section id="social" class="section">
+  <div class="social-intro rv">
+    <div>
+      <h3>Giving the Gift of Sight to Every Child</h3>
+      <p>Dr. Prajapati believes that clear vision is every child's right — not a privilege. Through free eye camps, school screenings, and spectacle drives, he brings professional eye care to communities that need it most.</p>
+    </div>
+    <div class="social-nums">
+      <div class="sn-item"><span class="num" data-target="1200">0</span><span class="lbl">Children<br>Screened</span></div>
+      <div class="sn-item"><span class="num" data-target="400">0</span><span class="lbl">Free<br>Spectacles</span></div>
+      <div class="sn-item"><span class="num" data-target="50">0</span><span class="lbl">Eye<br>Camps</span></div>
+    </div>
+  </div>
+  <div class="social-cards">
+    <div class="sc rv"><img src="https://i.ibb.co/JRZXrRnX/9f73c3afc6ba.jpg" alt="School Screening" loading="lazy"><div class="sc-body"><i class="fas fa-school"></i><h3>School Screening Programme</h3><p>Annual vision screening at 30+ government schools in Navsari — detecting problems before they affect learning.</p></div></div>
+    <div class="sc rv"><img src="https://i.ibb.co/RTmgSNJm/82b07fa200d0.jpg" alt="Community Camp" loading="lazy"><div class="sc-body"><i class="fas fa-campground"></i><h3>Free Community Eye Camps</h3><p>Regular camps in underserved areas — comprehensive exams, spectacles, and referrals at no charge.</p></div></div>
+    <div class="sc rv"><img src="https://i.ibb.co/qFyVdgMV/60658631e1c6.jpg" alt="Spectacles Scheme" loading="lazy"><div class="sc-body"><i class="fas fa-glasses"></i><h3>Spectacles Scheme</h3><p>Funded distribution of prescription glasses to children from low-income families across Navsari district.</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section section-alt">
+  <div class="section-header rv">
+    <span class="section-tag">Patient Stories</span>
+    <h2 class="section-h2">What Our Patients Say</h2>
+    <div class="divider" style="margin:.9rem auto;"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="tc feature rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"My son was labelled slow at school. Dr. K.P diagnosed Convergence Insufficiency in one visit. After four months of Vision Therapy, he is reading two grade levels above where he was and loves school. I am forever grateful — this changed our family's life."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://i.ibb.co/4g7W1nDB/97bf18fc709e.jpg" alt="Priya Desai" loading="lazy"></div>
+        <div><div class="tc-name" style="color:white;">Priya Desai</div><div class="tc-role">Mother of VT patient · Surat</div></div>
+      </div>
+    </div>
+    <div class="tc rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"Dr. Kiran detected early-stage glaucoma during a routine exam. His thoroughness literally saved my vision. A truly exceptional clinician."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://i.ibb.co/xtWq99Xb/1f91c9c2542e.jpg" alt="Ramesh Mehta" loading="lazy"></div>
+        <div><div class="tc-name">Ramesh Mehta</div><div class="tc-role">Navsari · Patient for 7 years</div></div>
+      </div>
+    </div>
+    <div class="tc rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"I had daily headaches for two years after a road accident. Kiran bhai diagnosed Post-Concussion Vision Syndrome in 20 minutes. Vision Therapy resolved everything."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Arjun Nair" loading="lazy"></div>
+        <div><div class="tc-name">Arjun Nair</div><div class="tc-role">IT Engineer · Surat</div></div>
+      </div>
+    </div>
+    <div class="tc rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"The free eye camp in our village changed everything. Three of my children received glasses for the first time. Kiran's social work is extraordinary."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://i.ibb.co/LdNygc2r/ec097e3c005f.jpg" alt="Suresh Patel" loading="lazy"></div>
+        <div><div class="tc-name">Suresh Patel</div><div class="tc-role">Rural Navsari</div></div>
+      </div>
+    </div>
+    <div class="tc rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"As a cricketer, my peripheral vision and reaction time are everything. Dr. Kiran's Sports Vision programme measurably improved my game."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://i.ibb.co/07XzQ97/e31151447eca.jpg" alt="Vivek Sharma" loading="lazy"></div>
+        <div><div class="tc-name">Vivek Sharma</div><div class="tc-role">Cricketer · Gujarat U-19</div></div>
+      </div>
+    </div>
+    <div class="tc rv">
+      <div class="stars">★★★★★</div>
+      <p class="tc-txt">"As a diabetic, annual eye exams with him give me complete peace of mind. He monitors my retinal health with the utmost care and professionalism."</p>
+      <div class="tc-author">
+        <div class="tc-av"><img src="https://i.ibb.co/jkQGSYzS/4b14f60b1d76.jpg" alt="Harish Joshi" loading="lazy"></div>
+        <div><div class="tc-name">Harish Joshi</div><div class="tc-role">Retired Teacher · Navsari</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment" class="section">
+  <div class="appt-grid">
+    <div class="appt-left rv-l">
+      <span class="section-tag">Schedule a Visit</span>
+      <h2 class="section-h2">Book Your Appointment</h2>
+      <div class="divider"></div>
+      <p>Every visit is an unhurried, personalised experience. We listen carefully, examine thoroughly, and recommend precisely — putting your long-term eye health first.</p>
+      <div class="appt-img"><img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=600&q=85" alt="Consultation" loading="lazy"></div>
+      <div class="perks">
+        <div class="perk"><div class="perk-ic"><i class="fas fa-clock"></i></div><div class="perk-tx"><h4>Same-Day Urgent Slots</h4><p>Available for eye infections, injuries, and sudden vision changes.</p></div></div>
+        <div class="perk"><div class="perk-ic"><i class="fas fa-rupee-sign"></i></div><div class="perk-tx"><h4>Transparent, Affordable Pricing</h4><p>No hidden charges. Clear pricing for every service.</p></div></div>
+        <div class="perk"><div class="perk-ic"><i class="fas fa-brain"></i></div><div class="perk-tx"><h4>Navsari's Only VT Centre</h4><p>Dedicated Vision Therapy for children and adults.</p></div></div>
+      </div>
+    </div>
+    <div class="rv-r">
+    <form class="form-box" onsubmit="sendToWhatsApp(event)">
+
+  <h3>Request an Appointment</h3>
+  <p class="form-sub">Instant booking via WhatsApp</p>
+
+  <div class="fr">
+    <div class="fg">
+      <label>First Name</label>
+      <input type="text" name="firstName" required>
+    </div>
+    <div class="fg">
+      <label>Last Name</label>
+      <input type="text" name="lastName">
+    </div>
+  </div>
+
+  <div class="fr">
+    <div class="fg">
+      <label>Phone</label>
+      <input type="tel" name="phone" required>
+    </div>
+    <div class="fg">
+      <label>Age</label>
+      <input type="number" name="age">
+    </div>
+  </div>
+
+  <div class="fg">
+    <label>Service</label>
+    <select name="service" required>
+      <option value="">Select...</option>
+      <option>Eye Checkup</option>
+      <option>Vision Therapy</option>
+      <option>Children Eye Care</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="fr">
+    <div class="fg">
+      <label>Date</label>
+      <input type="date" name="date">
+    </div>
+    <div class="fg">
+      <label>Time</label>
+      <input type="time" name="time">
+    </div>
+  </div>
+
+  <div class="fg">
+    <label>Concern</label>
+    <textarea name="concern"></textarea>
+  </div>
+
+  <button type="submit" class="form-submit">
+    <i class="fab fa-whatsapp"></i> Book on WhatsApp
+  </button>
+
+</form>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="section section-alt">
+  <div class="section-header rv">
+    <span class="section-tag">Find Us</span>
+    <h2 class="section-h2">Visit Our Clinic in Navsari</h2>
+    <div class="divider" style="margin:.9rem auto;"></div>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-left rv-l">
+      <h2 class="section-h2" style="font-size:clamp(1.3rem,3vw,1.6rem);text-align:left;">Contact &amp; Hours</h2>
+      <div class="divider"></div>
+      <div class="contact-list">
+        <div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="ci-tx"><h4>Address</h4><p>Surya Apartments, Railway Station Rd, near Purna Society, Taskand Nagar, Vejalpore, Navsari, Gujarat 396445</p></div></div>
+        <div class="ci"><div class="ci-ic"><i class="fas fa-phone"></i></div><div class="ci-tx"><h4>Phone / WhatsApp</h4><p><a href="tel:+918347583312" style="color:inherit;">+91 8347583312</a></p></div></div>
+        <div class="ci"><div class="ci-ic"><i class="fas fa-envelope"></i></div><div class="ci-tx"><h4>Email</h4><p>kiran11152@gmail.com</p></div></div>
+      </div>
+      <div class="hours-table">
+        <div class="hr"><span class="day">Monday – Friday</span><span class="time">9:30 AM – 8:00 PM</span></div>
+        <div class="hr"><span class="day">Sunday</span><span class="time">10:00 AM – 1:00 PM<br><small style="font-weight:400;color:var(--muted);">By Appointment Only</small></span></div>
+        <div class="hr"><span class="day">Lunch Break</span><span class="time">1:00 PM – 2:00 PM</span></div>
+      </div>
+    </div>
+    <div class="map-box rv-r">
+      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=70" alt="Map" loading="lazy">
+      <div class="map-box-content">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Div's Eye Care</strong><br>Surya Apartments, Railway Station Rd,<br>near Purna Society, Vejalpore,<br>Navsari, Gujarat 396445</p>
+        <a href="https://maps.google.com/?q=Div's+Eye+Care+Navsari+Gujarat" target="_blank" rel="noopener"><i class="fas fa-directions"></i> Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="fb-brand">
+      <h3>Dr. Kiran Prajapati</h3>
+      <p>Navsari's trusted optometrist and Vision Therapy specialist — delivering exceptional eye care with compassion for over a decade.</p>
+      <div class="fsocials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/918347583312" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Eye Exams</a></li>
+        <li><a href="#services">Vision Therapy</a></li>
+        <li><a href="#services">Paediatric Care</a></li>
+        <li><a href="#services">Contact Lenses</a></li>
+        <li><a href="#services">Prescription Glasses</a></li>
+        <li><a href="#services">Sports Vision</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Vision Therapy</h4>
+      <ul>
+        <li><a href="#vision-therapy">What is VT?</a></li>
+        <li><a href="#vision-therapy">VT for Children</a></li>
+        <li><a href="#vision-therapy">VT for Adults</a></li>
+        <li><a href="#vision-therapy">Amblyopia Treatment</a></li>
+        <li><a href="#vision-therapy">Convergence Issues</a></li>
+        <li><a href="#vision-therapy">Post-Concussion VT</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Dr. Prajapati</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li><a href="#social">Social Work</a></li>
+        <li><a href="#testimonials">Patient Reviews</a></li>
+        <li><a href="#location">Find Our Clinic</a></li>
+        <li><a href="#quiz">Eye Health Check</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Dr. Kiran Prajapati Eye Clinic, Navsari, Gujarat · B.Optom · M.Optom · Vision Therapy Specialist
+  </div>
+</footer>
+
+<!-- FLOAT BUTTONS -->
+<div class="float-btns">
+  <a class="fb-btn wa" href="https://wa.me/918347583312" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a class="fb-btn ph" href="tel:+918347583312" aria-label="Call"><i class="fas fa-phone"></i></a>
+  <button class="fb-btn up" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<script>
+/* ── PRELOADER ───────────────────── */
+(function(){
+  document.body.style.overflow='hidden';
+  window._lt=setTimeout(dismissLoader,4500);
+  setTimeout(dismissLoader,3800);
+})();
+function dismissLoader(){
+  clearTimeout(window._lt);
+  var l=document.getElementById('loader');
+  l.classList.add('out');
+  document.body.style.overflow='';
+  setTimeout(function(){l.style.display='none';},800);
+}
+
+/* ── NAV ─────────────────────────── */
+var nav=document.getElementById('nav');
+var menuOpen=false;
+function toggleMenu(){
+  menuOpen=!menuOpen;
+  var m=document.getElementById('mobileNav');
+  var h=document.getElementById('ham');
+  m.classList.toggle('open',menuOpen);
+  h.setAttribute('aria-expanded',menuOpen);
+  document.body.style.overflow=menuOpen?'hidden':'';
+  h.querySelectorAll('span').forEach(function(s,i){
+    if(menuOpen){
+      if(i===0)s.style.transform='rotate(45deg) translate(5px,5px)';
+      if(i===1)s.style.opacity='0';
+      if(i===2)s.style.transform='rotate(-45deg) translate(5px,-5px)';
+    }else{s.style.transform='';s.style.opacity='';}
+  });
+}
+
+document.addEventListener('click',function(e){
+  if(menuOpen&&!e.target.closest('#mobileNav')&&!e.target.closest('#ham')){
+    toggleMenu();
+  }
+});
+
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('raised',window.scrollY>40);
+  document.getElementById('scrollTop').classList.toggle('show',window.scrollY>500);
+},{passive:true});
+
+/* ── SMOOTH SCROLL ───────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');
+    if(id==='#')return;
+    var t=document.querySelector(id);
+    if(t){
+      e.preventDefault();
+      if(menuOpen)toggleMenu();
+      setTimeout(function(){
+        var offset=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||64;
+        var top=t.getBoundingClientRect().top+window.scrollY-offset;
+        window.scrollTo({top:top,behavior:'smooth'});
+      },menuOpen?300:0);
+    }
+  });
+});
+
+/* ── COUNTER ─────────────────────── */
+function counter(el,target){
+  var start=performance.now(),dur=1800;
+  (function step(now){
+    var p=Math.min((now-start)/dur,1),v=Math.floor((1-Math.pow(1-p,3))*target);
+    el.textContent=v>=1000?v.toLocaleString():v;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target>=1000?target.toLocaleString():target;
+  })(start);
+}
+
+/* ── REVEAL ──────────────────────── */
+var rvObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-target]').forEach(function(c){counter(c,+c.dataset.target);});
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(function(el){rvObs.observe(el);});
+
+setTimeout(function(){
+  counter(document.getElementById('s1'),8);
+  counter(document.getElementById('s2'),5000);
+  counter(document.getElementById('s3'),1200);
+},4000);
+
+/* ── QUIZ ─────────────────────────── */
+var Qs=[
+  {cat:'Distance Vision',icon:'👁️',q:'How would you describe your distance vision?',opts:[{i:'fa-check-circle',t:'Clear — no issues'},{i:'fa-search',t:'Slightly blurry at distance'},{i:'fa-eye-slash',t:'Very blurry — hard to read signs'},{i:'fa-adjust',t:'Blurry even with glasses'}]},
+  {cat:'Near Vision',icon:'📖',q:'How is your near vision when reading or using a screen?',opts:[{i:'fa-check-circle',t:'Perfectly comfortable'},{i:'fa-battery-half',t:'Tires quickly after a while'},{i:'fa-glasses',t:'Blurry — need glasses to read'},{i:'fa-times-circle',t:'Still blurry even with glasses'}]},
+  {cat:'Symptoms',icon:'🤕',q:'Do you experience any of these regularly?',opts:[{i:'fa-head-side-virus',t:'Headaches after reading or screen use'},{i:'fa-eye',t:'Double vision or ghosting'},{i:'fa-sun',t:'Sensitivity to light or glare'},{i:'fa-ban',t:'None of the above'}]},
+  {cat:'Screen Time',icon:'💻',q:'How many hours per day do you spend on screens?',opts:[{i:'fa-mobile-alt',t:'Under 3 hours'},{i:'fa-laptop',t:'3 to 6 hours'},{i:'fa-desktop',t:'6 to 10 hours'},{i:'fa-infinity',t:'10+ hours'}]},
+  {cat:'Who is this for?',icon:'👪',q:'Is this assessment for you or a family member?',opts:[{i:'fa-user',t:'For me — adult (18+)'},{i:'fa-child',t:'For my child (under 12)'},{i:'fa-user-graduate',t:'For a teenager (12–18)'},{i:'fa-user-friends',t:'For an elderly family member'}]},
+  {cat:'Last Eye Exam',icon:'📅',q:'When did you last have a professional eye examination?',opts:[{i:'fa-calendar-check',t:'Within the past year'},{i:'fa-calendar',t:'1 to 2 years ago'},{i:'fa-calendar-times',t:'More than 2 years ago'},{i:'fa-question-circle',t:'Never had a full eye exam'}]},
+  {cat:'Medical History',icon:'💊',q:'Do you have any of the following health conditions?',opts:[{i:'fa-tint',t:'Diabetes'},{i:'fa-heartbeat',t:'Hypertension'},{i:'fa-dna',t:'Family history of glaucoma or cataracts'},{i:'fa-shield-alt',t:'None of the above'}]},
+  {cat:'Your Goal',icon:'🎯',q:'What is the main reason for your eye care interest?',opts:[{i:'fa-stethoscope',t:'Routine check — peace of mind'},{i:'fa-brain',t:'Explore Vision Therapy options'},{i:'fa-glasses',t:'Update prescription or get glasses'},{i:'fa-exclamation-triangle',t:'I have a specific concern'}]}
+];
+var results={
+  urgent:{badge:'high',label:'Prompt Assessment Advised',icon:'🔴',title:'Your Symptoms Warrant Attention',desc:'Your responses indicate active symptoms that benefit from professional evaluation soon. Early assessment leads to better outcomes.',rec:'We recommend calling our clinic this week to arrange an appointment.'},
+  vt_child:{badge:'high',label:'Paediatric VT Recommended',icon:'🧒',title:'Your Child May Have an Undetected Vision Problem',desc:'Children rarely realise their vision is abnormal. Conditions like Convergence Insufficiency and Amblyopia are entirely treatable when caught early.',rec:'Book a comprehensive Paediatric Vision Therapy Assessment with Dr. Prajapati.'},
+  vt_adult:{badge:'med',label:'Vision Therapy Assessment Advised',icon:'🔬',title:'Vision Therapy Could Help',desc:'Your responses suggest a possible Binocular Vision Dysfunction — causing headaches and strain that standard glasses alone cannot resolve.',rec:'A detailed binocular vision evaluation will clarify whether Vision Therapy is the right approach for you.'},
+  screen:{badge:'med',label:'Digital Eye Strain Detected',icon:'💻',title:'Your Eyes Are Under Screen Stress',desc:'High screen use strains the focusing and eye-teaming systems over time, often leading to Computer Vision Syndrome.',rec:'Book a digital eye strain assessment to get targeted relief beyond blue-cut lenses.'},
+  high_risk:{badge:'high',label:'Annual Monitoring Essential',icon:'⚠️',title:'You Are in a Higher-Risk Category',desc:'Conditions like diabetes, hypertension, or a family history of glaucoma can silently damage vision without obvious symptoms until significant harm has occurred.',rec:'A dilated fundus exam and IOP assessment is strongly recommended.'},
+  routine:{badge:'low',label:'Routine Check-Up Overdue',icon:'📋',title:'An Annual Eye Exam is Recommended',desc:'Your vision sounds stable but a professional examination is overdue. Annual exams catch subtle changes before they become significant.',rec:'Book a comprehensive wellness eye exam — prevention is always more effective than treatment.'},
+  good:{badge:'low',label:'Eyes Sound Healthy',icon:'✅',title:'Great News — Keep It Up!',desc:'Your responses suggest your vision is well-managed. Annual check-ups will ensure it stays that way.',rec:'Book a yearly wellness exam to monitor for any early changes.'}
+};
+function getResult(a){
+  if(a[2]===1||a[2]===0)return 'urgent';
+  if(a[4]===1||a[4]===2)return 'vt_child';
+  if(a[6]===0||a[6]===1||a[6]===2)return 'high_risk';
+  if((a[2]===0)&&a[3]>=2)return 'screen';
+  if(a[0]>=1&&a[1]>=1)return 'vt_adult';
+  if(a[5]>=2)return 'routine';
+  return 'good';
+}
+var cQ=0,ans=[];
+function renderQuiz(){
+  var box=document.getElementById('quizBox');
+  if(cQ>=Qs.length){
+    var r=results[getResult(ans)];
+    box.innerHTML='<div class="quiz-result"><span class="qr-icon">'+r.icon+'</span><span class="qr-badge '+r.badge+'">'+r.label+'</span><div class="qr-title">'+r.title+'</div><p class="qr-desc">'+r.desc+'</p><div class="qr-rec"><h4>Our Recommendation</h4><p>'+r.rec+'</p></div><div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;"><a href="#appointment" class="btn-primary" style="font-size:.82rem;"><i class="fas fa-calendar-plus"></i> Book Appointment</a><button onclick="resetQuiz()" class="btn-secondary" style="font-size:.82rem;border-radius:50px;"><i class="fas fa-redo"></i> Retake</button></div></div>';
+    return;
+  }
+  var q=Qs[cQ],pct=(cQ/Qs.length)*100;
+  box.innerHTML='<div class="quiz-head"><div class="quiz-step-icon">'+q.icon+'</div><div class="quiz-prog-wrap"><div class="quiz-prog-label">Question '+(cQ+1)+' of '+Qs.length+' &nbsp;·&nbsp; '+q.cat+'</div><div class="quiz-prog-track"><div class="quiz-prog-fill" style="width:'+pct+'%"></div></div></div></div><div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+q.opts.map(function(o,i){return '<div class="quiz-opt"'+(ans[cQ]===i?' sel':'')+'  onclick="selOpt(this,'+i+')"><i class="fas '+o.i+'"></i>'+o.t+'</div>';}).join('')+'</div><div class="quiz-nav">'+(cQ>0?'<button class="btn-secondary" style="font-size:.78rem;padding:.6rem 1.1rem;border-radius:50px;" onclick="prevQ()"><i class="fas fa-arrow-left"></i> Back</button>':'<span></span>')+'<button class="btn-primary" style="font-size:.78rem;padding:.6rem 1.3rem;" id="nxtBtn" onclick="nextQ()"'+(ans[cQ]===undefined?' disabled':'')+'>'+(cQ===Qs.length-1?'See Result':'Next')+' <i class="fas fa-arrow-right"></i></button></div>';
+}
+function selOpt(el,i){document.querySelectorAll('.quiz-opt').forEach(function(o){o.classList.remove('sel');});el.classList.add('sel');ans[cQ]=i;var nb=document.getElementById('nxtBtn');if(nb)nb.disabled=false;}
+function nextQ(){if(ans[cQ]===undefined)return;if(cQ===Qs.length-1){cQ++;renderQuiz();return;}cQ++;renderQuiz();}
+function prevQ(){cQ--;renderQuiz();}
+function resetQuiz(){cQ=0;ans=[];renderQuiz();}
+renderQuiz();
+
+
+
+
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  const firstName = document.querySelector('[name="firstName"]').value;
+  const lastName = document.querySelector('[name="lastName"]').value;
+  const phone = document.querySelector('[name="phone"]').value;
+  const age = document.querySelector('[name="age"]').value;
+  const service = document.querySelector('[name="service"]').value;
+  const date = document.querySelector('[name="date"]').value;
+  const time = document.querySelector('[name="time"]').value;
+  const concern = document.querySelector('[name="concern"]').value;
+
+  const text = `Hello Doctor,
+
+I would like to book an appointment.
+
+Name: ${firstName} ${lastName}
+Phone: ${phone}
+Age: ${age}
+Service: ${service}
+Date: ${date}
+Time: ${time}
+Concern: ${concern}`;
+
+  // ✅ YOUR NUMBER (CORRECT FORMAT)
+  const number = "918347583312";
+
+  // ✅ FIX: Proper encoding (this solves your 404 error)
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
+}
+
+  
+
+
+
+  
+  
+  
+  
+</script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
